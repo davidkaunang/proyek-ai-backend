@@ -3,7 +3,8 @@ from flask_cors import CORS
 import re
 
 app = Flask(__name__)
-CORS(app)
+# Pengaturan CORS yang lebih spesifik
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # --- SIMULASI DATABASE PENGETAHUAN ---
 hiwar_db = {
